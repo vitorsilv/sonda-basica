@@ -15,10 +15,8 @@ public class Main {
 
         Planeta planeta = new Planeta(xPlaneta, yPlaneta, nomePlaneta);
 
-        //adicionar um do while para ver se quer mais sondas
-
         //Criando uma Sonda
-        System.out.println("Digite a posição inicial em "+nomePlaneta+"(X:"+xPlaneta+", Y:"+yPlaneta+") contendo X(de 0 a "+xPlaneta+"), Y(de 0 a "+yPlaneta+") e Direção da Sonda (N, E, S, W)");
+        System.out.println("Digite a posição inicial em " + nomePlaneta + "(X:" + xPlaneta + ", Y:" + yPlaneta + ") contendo X(de 0 a " + xPlaneta + "), Y(de 0 a " + yPlaneta + ") e Direção da Sonda (N, E, S, W)");
         System.out.print("X:");
         int xSonda = in.nextInt();
         System.out.print("Y:");
@@ -26,12 +24,33 @@ public class Main {
         System.out.print("Direção:");
         String direcaoSonda = in.next();
 
-        Sonda sonda = new Sonda(xSonda, ySonda, direcaoSonda);
+        Sonda sonda = new Sonda(xSonda, ySonda, direcaoSonda, planeta);
 
-        // adicionar um for que passa pelas letras de comandos para a sonda e ir chamando os métodos
+        //Comandos
+        System.out.print("Digite os comandos para a sua Sonda: ");
+        String comandos = in.next();
 
-        //adicionar um do while para ver se quer mais sondas
+        sonda.comandos(comandos);
 
-        //criar métodos para comandos
+        System.out.println(sonda.toString());
+
+        //Criando uma Sonda
+        System.out.println("Digite a posição inicial em " + nomePlaneta + "(X:" + xPlaneta + ", Y:" + yPlaneta + ") contendo X(de 0 a " + xPlaneta + "), Y(de 0 a " + yPlaneta + ") e Direção da Sonda (N, E, S, W)");
+        System.out.print("X:");
+        int xSonda1 = in.nextInt();
+        System.out.print("Y:");
+        int ySonda1 = in.nextInt();
+        System.out.print("Direção:");
+        String direcaoSonda1 = in.next();
+
+        Sonda sonda1 = new Sonda(xSonda1, ySonda1, direcaoSonda1, planeta);
+
+        //Comandos
+        System.out.print("Digite os comandos para a sua Sonda: ");
+        String comandos1 = in.next();
+
+        sonda1.comandos(comandos1);
+
+        System.out.println(sonda1.toString());
     }
 }

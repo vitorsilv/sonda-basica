@@ -14,4 +14,12 @@ public class Planicie {
                 ", limiteY=" + limiteY +
                 '}';
     }
+
+    public int getLimiteX() {
+        return limiteX;
+    }
+
+    public int getLimiteY() {
+        return limiteY;
+    }
 }

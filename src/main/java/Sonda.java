@@ -1,9 +1,20 @@
 public class Sonda extends Movimentacao{
 
-    public Sonda(int posicaoX, int posicaoY, String direcao) {
+    private Planicie planicie;
+
+    public Sonda(int posicaoX, int posicaoY, String direcao, Planicie planicie) {
         super(posicaoX, posicaoY, direcao);
+        this.planicie = planicie;
     }
 
+    @Override
+    public String toString() {
+        return "Sonda{" +
+                "posicaoX=" + posicaoX +
+                ", posicaoY=" + posicaoY +
+                ", direcao='" + direcao + '\'' +
+                '}';
+    }
 
     public void virarEsquerda() {
         switch (direcao) {
@@ -20,6 +31,7 @@ public class Sonda extends Movimentacao{
                 direcao = "S";
                 break;
         }
+        System.out.println(this.toString());
     }
 
     public void virarDireita() {
@@ -37,22 +49,32 @@ public class Sonda extends Movimentacao{
                 direcao = "N";
                 break;
         }
+        System.out.println(this.toString());
     }
 
     public void mover() {
         switch (direcao){
             case "N":
-                posicaoY++;
+                if(posicaoY < planicie.getLimiteY()) {
+                    posicaoY++;
+                }
                 break;
             case "E":
-                posicaoX++;
+                if(posicaoX < planicie.getLimiteX()) {
+                    posicaoX++;
+                }
                 break;
             case "S":
-                posicaoY--;
+                if(posicaoY > 0) {
+                    posicaoY--;
+                }
                 break;
             case "W":
-                posicaoX--;
+                if(posicaoX > 0) {
+                    posicaoX--;
+                }
                 break;
         }
+        System.out.println(this.toString());
     }
 }

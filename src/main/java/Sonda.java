@@ -31,7 +31,6 @@ public class Sonda extends Movimentacao{
                 direcao = "S";
                 break;
         }
-        System.out.println(this.toString());
     }
 
     public void virarDireita() {
@@ -49,32 +48,16 @@ public class Sonda extends Movimentacao{
                 direcao = "N";
                 break;
         }
-        System.out.println(this.toString());
     }
 
     public void mover() {
-        switch (direcao){
-            case "N":
-                if(posicaoY < planicie.getLimiteY()) {
-                    posicaoY++;
-                }
-                break;
-            case "E":
-                if(posicaoX < planicie.getLimiteX()) {
-                    posicaoX++;
-                }
-                break;
-            case "S":
-                if(posicaoY > 0) {
-                    posicaoY--;
-                }
-                break;
-            case "W":
-                if(posicaoX > 0) {
-                    posicaoX--;
-                }
-                break;
-        }
-        System.out.println(this.toString());
+        if (direcao.equals("N") &&posicaoY < planicie.getLimiteY())
+            posicaoY++;
+        else if (direcao.equals("E") && posicaoX < planicie.getLimiteX())
+            posicaoX++;
+        else if (direcao.equals("S") && posicaoY > 0)
+            posicaoY--;
+        else if (direcao.equals("W") && posicaoX > 0)
+            posicaoX--;
     }
 }

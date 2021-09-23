@@ -34,7 +34,7 @@ public class Main {
 
             sonda.comandos(comandos);
 
-            System.out.println(sonda.toString());
+            System.out.println(sonda);
 
             System.out.println("============= MENU =============\n" +
                     "1 - Enviar mais uma sonda para "+planeta.getNomePlaneta()+".\n" +

@@ -1,63 +1,60 @@
-public class Sonda extends Movimentacao{
-
-    private Planicie planicie;
+public class Sonda extends Controle {
 
     public Sonda(int posicaoX, int posicaoY, String direcao, Planicie planicie) {
-        super(posicaoX, posicaoY, direcao);
-        this.planicie = planicie;
+        super(posicaoX, posicaoY, direcao, planicie);
     }
 
     @Override
     public String toString() {
         return "Sonda{" +
-                "posicaoX=" + posicaoX +
-                ", posicaoY=" + posicaoY +
-                ", direcao='" + direcao + '\'' +
+                "posicaoX=" + getPosicaoX() +
+                ", posicaoY=" + getPosicaoY() +
+                ", direcao='" + getDirecao() + '\'' +
                 '}';
     }
 
     public void virarEsquerda() {
-        switch (direcao) {
+        switch (getDirecao()) {
             case "N":
-                direcao = "W";
+                setDirecao("W");
                 break;
             case "E":
-                direcao = "N";
+                setDirecao("N");
                 break;
             case "S":
-                direcao = "E";
+                setDirecao("E");
                 break;
             case "W":
-                direcao = "S";
+                setDirecao("S");
                 break;
         }
     }
 
     public void virarDireita() {
-        switch (direcao){
+        switch (getDirecao()){
             case "N":
-                direcao = "E";
+                setDirecao("E");
                 break;
             case "E":
-                direcao = "S";
+                setDirecao("S");
                 break;
             case "S":
-                direcao = "W";
+                setDirecao("W");
                 break;
             case "W":
-                direcao = "N";
+                setDirecao("N");
                 break;
         }
     }
 
     public void mover() {
-        if (direcao.equals("N") &&posicaoY < planicie.getLimiteY())
-            posicaoY++;
-        else if (direcao.equals("E") && posicaoX < planicie.getLimiteX())
-            posicaoX++;
-        else if (direcao.equals("S") && posicaoY > 0)
-            posicaoY--;
-        else if (direcao.equals("W") && posicaoX > 0)
-            posicaoX--;
+        if (getDirecao().equals("N") && getPosicaoY() < getPlanicie().getLimiteY())
+            setPosicaoY(getPosicaoY()+1);
+        else if (getDirecao().equals("E") && getPosicaoX() < getPlanicie().getLimiteX())
+            setPosicaoX(getPosicaoX()+1);
+        else if (getDirecao().equals("S") && getPosicaoY() > 0)
+            setPosicaoY(getPosicaoY()-1);
+        else if (getDirecao().equals("W") && getPosicaoX() > 0)
+            setPosicaoX(getPosicaoX()-1);
     }
 }

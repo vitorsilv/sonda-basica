@@ -15,42 +15,31 @@ public class Main {
 
         Planeta planeta = new Planeta(xPlaneta, yPlaneta, nomePlaneta);
 
-        //Criando uma Sonda
-        System.out.println("Digite a posição inicial em " + nomePlaneta + "(X:" + xPlaneta + ", Y:" + yPlaneta + ") contendo X(de 0 a " + xPlaneta + "), Y(de 0 a " + yPlaneta + ") e Direção da Sonda (N, E, S, W)");
-        System.out.print("X:");
-        int xSonda = in.nextInt();
-        System.out.print("Y:");
-        int ySonda = in.nextInt();
-        System.out.print("Direção:");
-        String direcaoSonda = in.next();
+        int opcaoMenu = 1;
+        do {
+            //Criando uma Sonda
+            System.out.println("Digite a posição inicial em " + planeta.getNomePlaneta() + "(X:" + planeta.getLimiteX() + ", Y:" + planeta.getLimiteY() + ") contendo X(de 0 a " + planeta.getLimiteX() + "), Y(de 0 a " + planeta.getLimiteY() + ") e Direção da Sonda (N, E, S, W)");
+            System.out.print("X(de 0 a " +planeta.getLimiteX()+"):");
+            int xSonda = in.nextInt();
+            System.out.print("Y(de 0 a " +planeta.getLimiteY()+"):");
+            int ySonda = in.nextInt();
+            System.out.print("Direção:");
+            String direcaoSonda = in.next();
 
-        Sonda sonda = new Sonda(xSonda, ySonda, direcaoSonda, planeta);
+            Sonda sonda = new Sonda(xSonda, ySonda, direcaoSonda, planeta);
 
-        //Comandos
-        System.out.print("Digite os comandos para a sua Sonda: ");
-        String comandos = in.next();
+            //Comandos
+            System.out.print("Digite os comandos para a sua Sonda (os comando validos são 'L','R' e 'M'): ");
+            String comandos = in.next();
 
-        sonda.comandos(comandos);
+            sonda.comandos(comandos);
 
-        System.out.println(sonda.toString());
+            System.out.println(sonda.toString());
 
-        //Criando uma Sonda
-        System.out.println("Digite a posição inicial em " + nomePlaneta + "(X:" + xPlaneta + ", Y:" + yPlaneta + ") contendo X(de 0 a " + xPlaneta + "), Y(de 0 a " + yPlaneta + ") e Direção da Sonda (N, E, S, W)");
-        System.out.print("X:");
-        int xSonda1 = in.nextInt();
-        System.out.print("Y:");
-        int ySonda1 = in.nextInt();
-        System.out.print("Direção:");
-        String direcaoSonda1 = in.next();
-
-        Sonda sonda1 = new Sonda(xSonda1, ySonda1, direcaoSonda1, planeta);
-
-        //Comandos
-        System.out.print("Digite os comandos para a sua Sonda: ");
-        String comandos1 = in.next();
-
-        sonda1.comandos(comandos1);
-
-        System.out.println(sonda1.toString());
+            System.out.println("============= MENU =============\n" +
+                    "1 - Enviar mais uma sonda para "+planeta.getNomePlaneta()+".\n" +
+                    "0 - Encerrar controle de missão");
+            opcaoMenu = in.nextInt();
+        }while (opcaoMenu != 0);
     }
 }

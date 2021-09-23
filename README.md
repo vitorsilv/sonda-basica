@@ -9,7 +9,7 @@ Uma **Sonda** precisa de um local para pousar e realizar sua **Movimentação**,
 A classe **Planicie** tem os atributos ***limiteX*** e ***limiteY*** para delimitar o tamanho da planície que a sonda pode explorar.
 ###  Planeta
 Um **Planeta herda de Planicie** os atributos e métodos e também adiciona ***nomePlaneta*** que o identifica como "Marte".
-### Movimentacao
-A classe abstrata **Movimentacao** cria os atributos necessários para qualquer tipo de robô se movimentar na planície os atributos ***posicaoX*** ***posicaoY*** e ***direcao***, além de conter os *métodos abstratos*, **virarEsquerda()**, **virarDireita()** e **mover()** além do método que lê todos os comandos enviados para o robô e chama a implementação dos métodos abstratos.
+### Controle
+A classe abstrata **Controle** cria os atributos necessários para qualquer tipo de robô se movimentar na planície os atributos ***posicaoX***, ***posicaoY*** e ***direcao***, uma instância de **Planice** para saber quais os limites(***limiteX, limiteY***) da área que tem para andar, além de conter os *métodos abstratos*(**virarEsquerda()**, **virarDireita()** e **mover()**), o método que lê todos os **comandos()** enviados para o robô e os gettters e setters.
 ### Sonda
-A classe **Sonda** representa uma sonda, ela tem uma instancia de **Planice** para saber quais os limites(***limiteX, limiteY***) da área que tem para andar além das implementações dos *métodos abstratos*, **virarEsquerda()**, **virarDireita()** e **mover()** da classe **Movimentacao**
+A classe **Sonda** representa uma sonda,  ela contém as implementações dos *métodos abstratos*(**virarEsquerda()**, **virarDireita()** e **mover()**) da classe **Controle**

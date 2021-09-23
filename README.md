@@ -13,3 +13,4 @@ Um **Planeta herda de Planicie** os atributos e métodos e também adiciona ***n
 A classe abstrata **Controle** cria os atributos necessários para qualquer tipo de robô se movimentar na planície os atributos ***posicaoX***, ***posicaoY*** e ***direcao***, uma instância de **Planice** para saber quais os limites(***limiteX, limiteY***) da área que tem para andar, além de conter os *métodos abstratos*(**virarEsquerda()**, **virarDireita()** e **mover()**), o método que lê todos os **comandos()** enviados para o robô e os gettters e setters.
 ### Sonda
 A classe **Sonda** representa uma sonda,  ela contém as implementações dos *métodos abstratos*(**virarEsquerda()**, **virarDireita()** e **mover()**) da classe **Controle**
+# FALAR SOBRE O ENUM DIRECAO

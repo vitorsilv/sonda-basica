@@ -38,7 +38,7 @@ public class Main {
 
             System.out.println("============= MENU =============\n" +
                     "1 - Enviar mais uma sonda para "+planeta.getNomePlaneta()+".\n" +
-                    "0 - Encerrar controle de missão");
+                    "0 - Encerrar controle de missão.");
             opcaoMenu = in.nextInt();
         }while (opcaoMenu != 0);
     }

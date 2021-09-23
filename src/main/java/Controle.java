@@ -1,10 +1,8 @@
-import java.util.Locale;
-
 abstract class Controle {
     private int posicaoX;
     private int posicaoY;
-    private String direcao;
     private Planicie planicie;
+    private Direcao direcao;
 
     public Controle(int posicaoX, int posicaoY, String direcao, Planicie planicie) {
 
@@ -16,11 +14,11 @@ abstract class Controle {
 
         this.posicaoX = posicaoX;
         this.posicaoY = posicaoY;
-        this.direcao = direcao.toUpperCase(Locale.ROOT);
         this.planicie = planicie;
+        setDirecao(direcao);
 
     }
-
+    // TODO: CRIAR ENUM PARA COMANDO 23/09/2021
     public void comandos(String comandos) {
         String[] array = comandos.split("");
         for (int i = 0; i < array.length; i++) {
@@ -51,10 +49,6 @@ abstract class Controle {
         return posicaoY;
     }
 
-    public String getDirecao() {
-        return direcao;
-    }
-
     public Planicie getPlanicie() {
         return planicie;
     }
@@ -67,7 +61,27 @@ abstract class Controle {
         this.posicaoY = posicaoY;
     }
 
+    public String getDirecao() {
+        return direcao.getValorReal();
+    }
+
     public void setDirecao(String direcao) {
-        this.direcao = direcao;
+        switch (direcao){
+            case "N":
+                this.direcao = Direcao.N;
+                break;
+            case "E":
+                this.direcao = Direcao.E;
+                break;
+            case "S":
+                this.direcao = Direcao.S;
+                break;
+            case "W":
+                this.direcao = Direcao.W;
+                break;
+            default:
+                System.err.println("Valor inválido de direção");
+                throw new RuntimeException();
+        }
     }
 }

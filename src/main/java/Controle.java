@@ -64,7 +64,7 @@ abstract class Controle {
     public String getDirecao() {
         return direcao.getValorReal();
     }
-
+    // TODO Yudi tinha me mostrado como navegar em enums sem ser assim, tipo com um ++ mas não me lembro
     public void setDirecao(String direcao) {
         switch (direcao){
             case "N":

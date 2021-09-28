@@ -18,7 +18,7 @@ abstract class Controle {
         setDirecao(direcao);
 
     }
-    // TODO: CRIAR ENUM PARA COMANDO 23/09/2021
+
     public void comandos(String comandos) {
         String[] array = comandos.split("");
         for (int i = 0; i < array.length; i++) {

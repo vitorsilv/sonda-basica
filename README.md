@@ -1,7 +1,7 @@
 
 
 # Sonda :movie_camera: :first_quarter_moon:
-Este projeto é um implementação simples de uma sonda utilizando conceitos de orientação a objetos seguindo o enunciado do [explorando_marte.md](https://gist.github.com/elo7-developer/1a40c96a5d062b69f02c)
+Este projeto é uma implementação simples de uma sonda utilizando conceitos de orientação a objetos seguindo o enunciado do [explorando_marte.md](https://gist.github.com/elo7-developer/1a40c96a5d062b69f02c)
 ## Ideação
 Uma **Sonda** precisa de um local para pousar e realizar sua **Movimentação**, então é necessário uma **Planície** em um **Planeta**, com isso,  já temos as principais classes do projeto.
 
@@ -14,9 +14,9 @@ Um **Planeta herda de Planicie** os atributos e métodos e também adiciona ***n
 Uma classe de enums com os valores de **Direcao** (N, W, S, E)
 
 ### Controle
-A classe abstrata **Controle** cria os atributos necessários para qualquer tipo de robô se movimentar na planície os atributos ***posicaoX***, ***posicaoY*** , uma instância de **Planice** para saber quais os limites(***limiteX, limiteY***) da área que tem para andar,  uma instancia de **Direcao** para saber qual direção a sonda está apontando, além de conter os *métodos abstratos*(**virarEsquerda()**, **virarDireita()** e **mover()**), o método que lê todos os **comandos()** enviados para o robô e os gettters e setters.
+A classe abstrata **Controle** cria os atributos necessários para qualquer robô se movimentar na planície os atributos ***posicaoX***, ***posicaoY***, uma instância de **Planeta** para saber quais os limites(***limiteX, limiteY***) da área que tem para andar, uma instância de **Direcao** para saber qual direção a sonda está apontando, além de conter os *métodos abstratos*(**virarEsquerda()**, **virarDireita()** e **mover()**), o método que lê todos os **comandos()** enviados para o robô e os gettters e setters.
 ### Sonda
-A classe **Sonda** representa uma sonda,  ela contém as implementações dos *métodos abstratos*(**virarEsquerda()**, **virarDireita()** e **mover()**) da classe **Controle**
+A classe **Sonda** representa uma sonda, contém um conjunto estático com todas as sondas criadas, com ela podemos verificar se a sonda vai bater em outras e impedir a colisão, temos os as sobrescritas de métodos **equals()** e **hashCode()** além do **infoSonda()** que retorna uma string com o planeta e posição da sonda e também implementações dos *métodos abstratos*(**virarEsquerda()**, **virarDireita()** e **mover()**) da classe **Controle**.
 
 ### Main
-Cria um planeta com todos os atributos necessário, entra em um while enquanto o não selecionar a opção 0. Dentro do while cria e coordena sondas
+Cria um planeta com todos os atributos necessários, e duas sondas para serem testadas.

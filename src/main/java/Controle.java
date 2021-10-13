@@ -1,20 +1,20 @@
 abstract class Controle {
     private int posicaoX;
     private int posicaoY;
-    private Planicie planicie;
+    private Planeta planeta;
     private Direcao direcao;
 
-    public Controle(int posicaoX, int posicaoY, String direcao, Planicie planicie) {
+    public Controle(int posicaoX, int posicaoY, String direcao, Planeta planeta) {
 
-        if((posicaoX > planicie.getLimiteX() || posicaoX < 0) ||
-                (posicaoY > planicie.getLimiteY() || posicaoY < 0)){
+        if((posicaoX > planeta.getLimiteX() || posicaoX < 0) ||
+                (posicaoY > planeta.getLimiteY() || posicaoY < 0)){
             System.err.println("Você tentou pousar em uma área inválida.");
             throw new RuntimeException();
         }
 
         this.posicaoX = posicaoX;
         this.posicaoY = posicaoY;
-        this.planicie = planicie;
+        this.planeta = planeta;
         setDirecao(direcao);
 
     }
@@ -49,8 +49,8 @@ abstract class Controle {
         return posicaoY;
     }
 
-    public Planicie getPlanicie() {
-        return planicie;
+    public Planeta getPlaneta() {
+        return planeta;
     }
 
     public void setPosicaoX(int posicaoX) {
